@@ -3,7 +3,7 @@ extends KinematicBody2D
 var velocity = Vector2()
 export var speed = 300
 export var gravity = 10
-export var jumpforce = 45
+export var jumpforce = 400
 export var jumptime = 15
 
 var airtime = 0
@@ -16,7 +16,7 @@ func get_input():
 		velocity.x += 1
 	velocity.x = velocity.x * speed
 
-func gravity():
+func grav():
 	if is_on_floor():
 		velocity.y = 0
 		airtime = 0
@@ -28,9 +28,9 @@ func gravity():
 			velocity.y = velocity.y/1.5
 	
 	if Input.is_action_pressed("jump") && airtime < jumptime:
-			velocity.y -= jumpforce
+			velocity.y = -jumpforce
 	
 func _physics_process(delta):
 	get_input()
-	gravity()
+	grav()
 	move_and_slide(velocity, Vector2.UP)
