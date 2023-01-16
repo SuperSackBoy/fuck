@@ -16,3 +16,33 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="RayRight" type="RayCast2D" parent="."]
+position = Vector2( 30, 0 )
+enabled = true
+cast_to = Vector2( 4, 0 )
+
+[node name="RayRightTop" type="RayCast2D" parent="."]
+position = Vector2( 30, -50 )
+enabled = true
+cast_to = Vector2( 4, 0 )
+
+[node name="RayRightBottom" type="RayCast2D" parent="."]
+position = Vector2( 30, 50 )
+enabled = true
+cast_to = Vector2( 4, 0 )
+
+[node name="RayLeft" type="RayCast2D" parent="."]
+position = Vector2( -30, 0 )
+enabled = true
+cast_to = Vector2( -4, 0 )
+
+[node name="RayLeftTop" type="RayCast2D" parent="."]
+position = Vector2( -30, -50 )
+enabled = true
+cast_to = Vector2( -4, 0 )
+
+[node name="RayLeftBottom" type="RayCast2D" parent="."]
+position = Vector2( -30, 50 )
+enabled = true
+cast_to = Vector2( -4, 0 )
